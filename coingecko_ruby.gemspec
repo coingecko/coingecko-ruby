@@ -42,4 +42,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
   spec.add_development_dependency "http"
   spec.add_development_dependency "json"
+  spec.add_development_dependency "byebug"
 end
