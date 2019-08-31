@@ -10,9 +10,14 @@ require 'byebug'
 
 module CoingeckoRuby
   class Client
-    def get_list
-      output = JSON.parse(HTTP.timeout(write: 2, connect: 5, read: 8).get(CoingeckoRuby::Models::ApiLink.list_url))
+    def list
+      output = JSON.parse(
+        HTTP.timeout(write: 2, connect: 5, read: 8)
+        .get(CoingeckoRuby::Models::ApiLink.list_url)
+      )
+
       lists = []
+
       output.each do |output|
         list        = CoingeckoRuby::Models::List.new
         list.id     = output['id']
@@ -20,18 +25,27 @@ module CoingeckoRuby
         list.name   = output['name']
         lists << list
       end
+
       lists
     end
 
-    def get_simple_price(ids,
-                         vs_currencies,
-                         include_market_cap = false,
-                         include_24hr_vol = false,
-                         include_24hr_change = false,
-                         include_last_updated_at = false)
+    def simple_price(ids,
+                     vs_currencies,
+                     include_market_cap = false,
+                     include_24hr_vol = false,
+                     include_24hr_change = false,
+                     include_last_updated_at = false)
 
-      output = JSON.parse(HTTP.timeout(write: 2, connect: 5, read: 8).get(CoingeckoRuby::Models::ApiLink.simple_url(ids, vs_currencies, include_market_cap, include_24hr_vol, include_24hr_change, include_last_updated_at)))
+      output = JSON.parse(
+        HTTP.timeout(write: 2, connect: 5, read: 8)
+        .get(CoingeckoRuby::Models::ApiLink.simple_url(
+               ids, vs_currencies, include_market_cap,
+               include_24hr_vol, include_24hr_change, include_last_updated_at
+             ))
+      )
+
       simple_prices = []
+
       output.each do |output|
         simple_price = CoingeckoRuby::Models::SimplePrice.new
         simple_price.last = output[1][vs_currencies.to_s]
@@ -41,17 +55,26 @@ module CoingeckoRuby
         simple_price.last_updated_at = output[1]['last_updated_at']
         simple_prices << simple_price
       end
+
       simple_prices
     end
 
-    def get_coin(id,
-                 localization = true,
-                 tickers = true,
-                 market_data = true,
-                 community_data = true,
-                 developer_data = true,aaa
-                 sparkline = false)
-      output = JSON.parse(HTTP.timeout(write: 2, connect: 5, read: 8).get(CoingeckoRuby::Models::ApiLink.coin_url(id, localization, tickers, market_data, community_data, developer_data, sparkline)))
+    def coin(id,
+             localization = true,
+             tickers = true,
+             market_data = true,
+             community_data = true,
+             developer_data = true,
+             sparkline = false)
+
+      output = JSON.parse(
+        HTTP.timeout(write: 2, connect: 5, read: 8)
+        .get(CoingeckoRuby::Models::ApiLink.coin_url(
+               id, localization, tickers,
+               market_data, community_data, developer_data,
+               sparkline
+             ))
+      )
 
       coin = CoingeckoRuby::Models::Coin.new
       coin.id = output['id']

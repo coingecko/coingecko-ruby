@@ -10,7 +10,8 @@ module CoingeckoRuby
                     :coingecko_rank, :coingecko_score, :developer_score,
                     :community_score, :liquidity_score, :public_interest_score,
                     :market_data, :community_data, :developer_data,
-                    :public_interest_stats, :status_updates, :last_updated, :tickers
+                    :public_interest_stats, :status_updates, :last_updated,
+                    :tickers
     end
   end
 end
