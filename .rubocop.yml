@@ -1,0 +1,12 @@
+inherit_from: .rubocop_todo.yml
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 80
+  Exclude:
+    - lib/coingecko_ruby/models/api_link.rb  
+
+Metrics/MethodLength:
+  Enabled: false

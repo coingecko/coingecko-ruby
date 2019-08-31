@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module CoingeckoRuby
   module Models
     class ApiLink
-      API_ENDPOINT = "https://api.coingecko.com/api/v3"
+      API_ENDPOINT = 'https://api.coingecko.com/api/v3'
 
       def self.list_url
         "#{API_ENDPOINT}/coins/list"
@@ -13,7 +15,7 @@ module CoingeckoRuby
 
       def self.coin_url(id, localization, tickers, market_data, community_data, developer_data, sparkline)
         "#{API_ENDPOINT}/coins/#{id}?localization=#{localization}&tickers=#{tickers}&market_data=#{market_data}&community_data=#{community_data}&developer_data=#{developer_data}&sparkline=#{sparkline}"
-      end      
+      end
     end
   end
 end

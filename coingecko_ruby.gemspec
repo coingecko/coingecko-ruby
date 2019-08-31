@@ -43,4 +43,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "http"
   spec.add_development_dependency "json"
   spec.add_development_dependency "byebug"
+  spec.add_development_dependency "rubocop"
 end
