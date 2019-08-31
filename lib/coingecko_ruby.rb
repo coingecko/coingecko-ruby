@@ -49,7 +49,7 @@ module CoingeckoRuby
                  tickers = true,
                  market_data = true,
                  community_data = true,
-                 developer_data = true,
+                 developer_data = true,aaa
                  sparkline = false)
       output = JSON.parse(HTTP.timeout(write: 2, connect: 5, read: 8).get(CoingeckoRuby::Models::ApiLink.coin_url(id, localization, tickers, market_data, community_data, developer_data, sparkline)))
 
