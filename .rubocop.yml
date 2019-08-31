@@ -5,6 +5,8 @@ Documentation:
 
 Metrics/LineLength:
   Max: 80
+  Exclude:
+    - lib/coingecko_ruby/models/api_link.rb  
 
 Metrics/MethodLength:
   Enabled: false
