@@ -16,6 +16,10 @@ module CoingeckoRuby
       def self.coin_url(id, localization, tickers, market_data, community_data, developer_data, sparkline)
         "#{API_ENDPOINT}/coins/#{id}?localization=#{localization}&tickers=#{tickers}&market_data=#{market_data}&community_data=#{community_data}&developer_data=#{developer_data}&sparkline=#{sparkline}"
       end
+
+      def self.exchanges_url
+        "#{API_ENDPOINT}/exchanges"
+      end
     end
   end
 end

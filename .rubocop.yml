@@ -4,7 +4,7 @@ Documentation:
   Enabled: false
 
 Metrics/LineLength:
-  Max: 80
+  Max: 120
   Exclude:
     - lib/coingecko_ruby/models/api_link.rb  
 

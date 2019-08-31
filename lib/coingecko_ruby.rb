@@ -4,6 +4,7 @@ require 'coingecko_ruby/models/list'
 require 'coingecko_ruby/models/api_link'
 require 'coingecko_ruby/models/simple_price'
 require 'coingecko_ruby/models/coin'
+require 'coingecko_ruby/models/exchange'
 require 'http'
 require 'json'
 require 'byebug'
@@ -25,17 +26,12 @@ module CoingeckoRuby
         list.name   = output['name']
         lists << list
       end
-
       lists
     end
 
-    def simple_price(ids,
-                     vs_currencies,
-                     include_market_cap = false,
-                     include_24hr_vol = false,
-                     include_24hr_change = false,
+    def simple_price(ids, vs_currencies, include_market_cap = false,
+                     include_24hr_vol = false, include_24hr_change = false,
                      include_last_updated_at = false)
-
       output = JSON.parse(
         HTTP.timeout(write: 2, connect: 5, read: 8)
         .get(CoingeckoRuby::Models::ApiLink.simple_url(
@@ -55,18 +51,11 @@ module CoingeckoRuby
         simple_price.last_updated_at = output[1]['last_updated_at']
         simple_prices << simple_price
       end
-
       simple_prices
     end
 
-    def coin(id,
-             localization = true,
-             tickers = true,
-             market_data = true,
-             community_data = true,
-             developer_data = true,
-             sparkline = false)
-
+    def coin(id, localization = true, tickers = true, market_data = true,
+             community_data = true, developer_data = true, sparkline = false)
       output = JSON.parse(
         HTTP.timeout(write: 2, connect: 5, read: 8)
         .get(CoingeckoRuby::Models::ApiLink.coin_url(
@@ -102,8 +91,32 @@ module CoingeckoRuby
       coin.status_updates = output['status_updates']
       coin.last_updated = output['last_updated']
       coin.tickers = output['tickers']
-
       coin
+    end
+
+    def exchanges
+      output = JSON.parse(
+        HTTP.timeout(write: 2, connect: 5, read: 8)
+        .get(CoingeckoRuby::Models::ApiLink.exchanges_url)
+      )
+
+      exchanges = []
+
+      output.each do |output|
+        exchange = CoingeckoRuby::Models::Exchange.new
+        exchange.id = output['id']
+        exchange.name = output['name']
+        exchange.year_established = output['year_established']
+        exchange.country = output['country']
+        exchange.description = output['description']
+        exchange.url = output['url']
+        exchange.image = output['image']
+        exchange.has_trading_incentive = output['has_trading_incentive']
+        exchange.trade_volume_24h_btc = output['trade_volume_24h_btc']
+        exchange.trade_volume_24h_btc_normalized = output['trade_volume_24h_btc_normalized']
+        exchanges << exchange
+      end
+      exchanges
     end
   end
 end
