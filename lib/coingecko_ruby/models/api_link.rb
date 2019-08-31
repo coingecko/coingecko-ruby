@@ -20,6 +20,10 @@ module CoingeckoRuby
       def self.exchanges_url
         "#{API_ENDPOINT}/exchanges"
       end
+
+      def self.exchange_url(id)
+        "#{API_ENDPOINT}/exchanges/#{id}"
+      end
     end
   end
 end
