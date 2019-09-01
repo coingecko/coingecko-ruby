@@ -39,5 +39,9 @@ module CoingeckoRuby
     def exchange(id)
       CoingeckoRuby::Services::Exchanges::Exchange.new.fetch(id)
     end
+
+    def status_updates(category = '', project_type = '', per_page = 50, page = 1)
+      CoingeckoRuby::Services::StatusUpdate::StatusUpdate.new.fetch(category, project_type, per_page, page)
+    end
   end
 end

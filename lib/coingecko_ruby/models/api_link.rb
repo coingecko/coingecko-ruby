@@ -32,6 +32,10 @@ module CoingeckoRuby
       def self.supported_vs_currencies_url
         "#{API_ENDPOINT}/simple/supported_vs_currencies"
       end
+
+      def self.status_update_url(category, project_type, per_page, page)
+        "#{API_ENDPOINT}/status_updates?category=#{category}&project_type=#{project_type}&per_page=#{per_page}&page=#{page}"
+      end
     end
   end
 end
