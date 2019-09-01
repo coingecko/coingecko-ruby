@@ -2,9 +2,9 @@
 
 module CoingeckoRuby
   module Models
-    class SimplePrice
+    class Simple
       attr_accessor :last, :market_cap, :vol_24h, :change_24h,
-                    :last_updated_at
+                    :last_updated_at, :ids
     end
   end
 end
