@@ -40,6 +40,10 @@ module CoingeckoRuby
       def self.global_url
         "#{API_ENDPOINT}/global"
       end
+
+      def self.exchange_rates_url
+        "#{API_ENDPOINT}/exchange_rates"
+      end
     end
   end
 end

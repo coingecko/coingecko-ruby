@@ -47,5 +47,9 @@ module CoingeckoRuby
     def global
       CoingeckoRuby::Services::Global::Global.new.fetch
     end
+
+    def exchange_rates
+      CoingeckoRuby::Services::ExchangeRates::ExchangeRates.new.fetch
+    end
   end
 end
