@@ -14,6 +14,7 @@ require 'coingecko_ruby/services/fetch'
 require 'coingecko_ruby/services/ping/ping'
 
 require 'coingecko_ruby/services/simple/price'
+require 'coingecko_ruby/services/simple/supported_vs_currencies'
 
 require 'coingecko_ruby/services/coins/list'
 require 'coingecko_ruby/services/coins/coin'

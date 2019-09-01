@@ -6,10 +6,6 @@ module CoingeckoRuby
       CoingeckoRuby::Services::Ping::Ping.new.fetch
     end
 
-    def list
-      CoingeckoRuby::Services::Coins::List.new.fetch
-    end
-
     def simple_price(ids, vs_currencies, include_market_cap = false,
                      include_24hr_vol = false, include_24hr_change = false,
                      include_last_updated_at = false)
@@ -17,6 +13,14 @@ module CoingeckoRuby
         ids, vs_currencies, include_market_cap,
         include_24hr_vol, include_24hr_change, include_last_updated_at
       )
+    end
+
+    def supported_vs_currencies
+      CoingeckoRuby::Services::Simple::SupportedVsCurrencies.new.fetch
+    end
+
+    def list
+      CoingeckoRuby::Services::Coins::List.new.fetch
     end
 
     def coin(id, localization = true, tickers = true, market_data = true,

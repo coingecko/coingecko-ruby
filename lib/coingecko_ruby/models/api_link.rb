@@ -27,7 +27,11 @@ module CoingeckoRuby
 
       def self.ping_url
         "#{API_ENDPOINT}/ping"
-      end      
+      end
+
+      def self.supported_vs_currencies_url
+        "#{API_ENDPOINT}/simple/supported_vs_currencies"
+      end
     end
   end
 end
