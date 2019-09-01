@@ -43,5 +43,9 @@ module CoingeckoRuby
     def status_updates(category = '', project_type = '', per_page = 50, page = 1)
       CoingeckoRuby::Services::StatusUpdate::StatusUpdate.new.fetch(category, project_type, per_page, page)
     end
+
+    def global
+      CoingeckoRuby::Services::Global::Global.new.fetch
+    end
   end
 end

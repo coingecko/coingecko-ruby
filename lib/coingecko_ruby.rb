@@ -11,6 +11,7 @@ require 'coingecko_ruby/models/exchange'
 require 'coingecko_ruby/models/list'
 require 'coingecko_ruby/models/simple'
 require 'coingecko_ruby/models/status_update'
+require 'coingecko_ruby/models/global'
 
 require 'coingecko_ruby/services/fetch'
 
@@ -26,3 +27,5 @@ require 'coingecko_ruby/services/exchanges/exchanges'
 require 'coingecko_ruby/services/exchanges/exchange'
 
 require 'coingecko_ruby/services/status_update/status_update'
+
+require 'coingecko_ruby/services/global/global'
