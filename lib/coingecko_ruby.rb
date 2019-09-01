@@ -11,6 +11,8 @@ require 'coingecko_ruby/models/list'
 require 'coingecko_ruby/models/simple'
 require 'coingecko_ruby/services/fetch'
 
+require 'coingecko_ruby/services/ping/ping'
+
 require 'coingecko_ruby/services/simple/price'
 
 require 'coingecko_ruby/services/coins/list'

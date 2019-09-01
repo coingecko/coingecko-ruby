@@ -24,6 +24,10 @@ module CoingeckoRuby
       def self.exchange_url(id)
         "#{API_ENDPOINT}/exchanges/#{id}"
       end
+
+      def self.ping_url
+        "#{API_ENDPOINT}/ping"
+      end      
     end
   end
 end

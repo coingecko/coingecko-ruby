@@ -2,6 +2,10 @@
 
 module CoingeckoRuby
   class Client
+    def ping
+      CoingeckoRuby::Services::Ping::Ping.new.fetch
+    end
+
     def list
       CoingeckoRuby::Services::Coins::List.new.fetch
     end
