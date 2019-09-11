@@ -42,6 +42,14 @@ module CoingeckoRuby
       )
     end
 
+    def coin_markets(vs_currency, ids, order = 'market_cap_desc', per_page = 100, page = 1,
+                     sparkline = false, price_change_percentage = '1h')
+      CoingeckoRuby::Services::Coins::Markets.new.fetch(
+        vs_currency, ids, order, per_page, page,
+        sparkline, price_change_percentage
+      )
+    end
+
     def exchanges
       CoingeckoRuby::Services::Exchanges::Exchanges.new.fetch
     end

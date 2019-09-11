@@ -11,7 +11,12 @@ module CoingeckoRuby
                     :community_score, :liquidity_score, :public_interest_score,
                     :market_data, :community_data, :developer_data,
                     :public_interest_stats, :status_updates, :last_updated,
-                    :tickers
+                    :tickers, :vs_currency, :ids, :current_price, :market_cap,
+                    :total_volume, :high_24h, :low_24h, :price_change_24h,
+                    :price_change_percentage_24h, :market_cap_change_24h,
+                    :market_cap_change_percentage_24h, :total_supply,
+                    :ath, :ath_change_percentage, :ath_date, :roi,
+                    :sparkline_in_7d, :price_change_percentage_1h_in_currency
     end
   end
 end
