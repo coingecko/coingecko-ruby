@@ -15,6 +15,16 @@ module CoingeckoRuby
       )
     end
 
+    def simple_token_price(id, contract_addresses, vs_currencies, include_market_cap = false,
+                           include_24hr_vol = false, include_24hr_change = false,
+                           include_last_updated_at = false)
+      CoingeckoRuby::Services::Simple::TokenPrice.new.fetch(
+        id, contract_addresses, vs_currencies, include_market_cap,
+        include_24hr_vol, include_24hr_change,
+        include_last_updated_at
+      )
+    end
+
     def supported_vs_currencies
       CoingeckoRuby::Services::Simple::SupportedVsCurrencies.new.fetch
     end
