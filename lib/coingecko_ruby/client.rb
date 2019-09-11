@@ -50,6 +50,14 @@ module CoingeckoRuby
       )
     end
 
+    def coin_tickers(id, exchange_ids, include_exchange_logo = false, page = 1,
+                     order = 'trust_score_desc')
+      CoingeckoRuby::Services::Coins::Tickers.new.fetch(
+        id, exchange_ids, include_exchange_logo, page,
+        order
+      )
+    end
+
     def exchanges
       CoingeckoRuby::Services::Exchanges::Exchanges.new.fetch
     end

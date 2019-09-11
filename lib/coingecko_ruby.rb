@@ -25,6 +25,7 @@ require 'coingecko_ruby/services/simple/supported_vs_currencies'
 require 'coingecko_ruby/services/coins/list'
 require 'coingecko_ruby/services/coins/coin'
 require 'coingecko_ruby/services/coins/markets'
+require 'coingecko_ruby/services/coins/tickers'
 
 require 'coingecko_ruby/services/exchanges/exchanges'
 require 'coingecko_ruby/services/exchanges/exchange'

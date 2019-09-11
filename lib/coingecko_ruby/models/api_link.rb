@@ -25,6 +25,10 @@ module CoingeckoRuby
         "#{API_ENDPOINT}/coins/markets/?vs_currency=#{vs_currency}&ids=#{ids}&order=#{order}&per_page=#{per_page}&page=#{page}&sparkline=#{sparkline}&price_change_percentage=#{price_change_percentage}"
       end
 
+      def self.coin_tickers_url(id, exchange_ids, include_exchange_logo, page, order)
+        "#{API_ENDPOINT}/coins/#{id}/tickers?exchange_ids=#{exchange_ids}&include_exchange_logo=#{include_exchange_logo}&page=#{page}&order=#{order}"
+      end
+
       def self.exchanges_url
         "#{API_ENDPOINT}/exchanges"
       end
