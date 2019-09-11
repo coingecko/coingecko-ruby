@@ -45,6 +45,10 @@ module CoingeckoRuby
         "#{API_ENDPOINT}/coins/#{id}/status_updates"
       end
 
+      def self.contract_coin_url(id, contract_address)
+        "#{API_ENDPOINT}/coins/#{id}/contract/#{contract_address}"
+      end
+
       def self.exchanges_url
         "#{API_ENDPOINT}/exchanges"
       end

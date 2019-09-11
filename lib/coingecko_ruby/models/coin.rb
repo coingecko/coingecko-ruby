@@ -17,7 +17,9 @@ module CoingeckoRuby
                     :market_cap_change_percentage_24h, :total_supply,
                     :ath, :ath_change_percentage, :ath_date, :roi,
                     :sparkline_in_7d, :price_change_percentage_1h_in_currency,
-                    :prices, :market_caps, :total_volumes
+                    :prices, :market_caps, :total_volumes, :asset_platform_id,
+                    :contract_address, :sentiment_votes_up_percentage,
+                    :sentiment_votes_down_percentage
     end
   end
 end

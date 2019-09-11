@@ -80,6 +80,10 @@ module CoingeckoRuby
       CoingeckoRuby::Services::Coins::StatusUpdates.new.fetch(id)
     end
 
+    def contract_coin(id, contract_address)
+      CoingeckoRuby::Services::Contract::Coin.new.fetch(id, contract_address)
+    end
+
     def exchanges
       CoingeckoRuby::Services::Exchanges::Exchanges.new.fetch
     end
