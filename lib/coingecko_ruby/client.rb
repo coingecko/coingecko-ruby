@@ -84,6 +84,10 @@ module CoingeckoRuby
       CoingeckoRuby::Services::Contract::Coin.new.fetch(id, contract_address)
     end
 
+    def contract_market_chart(id, contract_address, vs_currency, days)
+      CoingeckoRuby::Services::Contract::MarketChart.new.fetch(id, contract_address, vs_currency, days)
+    end
+
     def exchanges
       CoingeckoRuby::Services::Exchanges::Exchanges.new.fetch
     end
