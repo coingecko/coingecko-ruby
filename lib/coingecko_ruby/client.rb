@@ -64,6 +64,12 @@ module CoingeckoRuby
       )
     end
 
+    def coin_market_chart(id, vs_currency, days)
+      CoingeckoRuby::Services::Coins::MarketChart.new.fetch(
+        id, vs_currency, days
+      )
+    end
+
     def exchanges
       CoingeckoRuby::Services::Exchanges::Exchanges.new.fetch
     end

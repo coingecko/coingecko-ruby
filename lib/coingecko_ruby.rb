@@ -27,6 +27,7 @@ require 'coingecko_ruby/services/coins/coin'
 require 'coingecko_ruby/services/coins/markets'
 require 'coingecko_ruby/services/coins/tickers'
 require 'coingecko_ruby/services/coins/history'
+require 'coingecko_ruby/services/coins/market_chart'
 
 require 'coingecko_ruby/services/exchanges/exchanges'
 require 'coingecko_ruby/services/exchanges/exchange'
