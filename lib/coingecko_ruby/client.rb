@@ -76,6 +76,10 @@ module CoingeckoRuby
       )
     end
 
+    def coin_status_updates(id)
+      CoingeckoRuby::Services::Coins::StatusUpdates.new.fetch(id)
+    end
+
     def exchanges
       CoingeckoRuby::Services::Exchanges::Exchanges.new.fetch
     end
