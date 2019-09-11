@@ -70,6 +70,12 @@ module CoingeckoRuby
       )
     end
 
+    def coin_market_chart_in_range(id, vs_currency, from, to)
+      CoingeckoRuby::Services::Coins::MarketChartInRange.new.fetch(
+        id, vs_currency, from, to
+      )
+    end
+
     def exchanges
       CoingeckoRuby::Services::Exchanges::Exchanges.new.fetch
     end

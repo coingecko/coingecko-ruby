@@ -37,6 +37,10 @@ module CoingeckoRuby
         "#{API_ENDPOINT}/coins/#{id}/market_chart?vs_currency=#{vs_currency}&days=#{days}"
       end
 
+      def self.coin_market_chart_in_range_url(id, vs_currency, from, to)
+        "#{API_ENDPOINT}/coins/#{id}/market_chart/range?vs_currency=#{vs_currency}&from=#{from}}&to=#{to}"
+      end
+
       def self.exchanges_url
         "#{API_ENDPOINT}/exchanges"
       end
