@@ -77,6 +77,10 @@ module CoingeckoRuby
         "#{API_ENDPOINT}/status_updates?category=#{category}&project_type=#{project_type}&per_page=#{per_page}&page=#{page}"
       end
 
+      def self.events_url
+        "#{API_ENDPOINT}/events"
+      end
+
       def self.events_countries_url
         "#{API_ENDPOINT}/events/countries"
       end

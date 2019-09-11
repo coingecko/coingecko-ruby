@@ -104,6 +104,10 @@ module CoingeckoRuby
       CoingeckoRuby::Services::StatusUpdate::StatusUpdate.new.fetch(category, project_type, per_page, page)
     end
 
+    def events
+      CoingeckoRuby::Services::Events::Events.new.fetch
+    end
+
     def events_countries
       CoingeckoRuby::Services::Events::Countries.new.fetch
     end
