@@ -58,6 +58,12 @@ module CoingeckoRuby
       )
     end
 
+    def coin_history(id, date, localization = true)
+      CoingeckoRuby::Services::Coins::History.new.fetch(
+        id, date, localization
+      )
+    end
+
     def exchanges
       CoingeckoRuby::Services::Exchanges::Exchanges.new.fetch
     end

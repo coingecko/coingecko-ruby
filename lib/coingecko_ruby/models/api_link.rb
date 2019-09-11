@@ -29,6 +29,10 @@ module CoingeckoRuby
         "#{API_ENDPOINT}/coins/#{id}/tickers?exchange_ids=#{exchange_ids}&include_exchange_logo=#{include_exchange_logo}&page=#{page}&order=#{order}"
       end
 
+      def self.coin_history_url(id, date, localization)
+        "#{API_ENDPOINT}/coins/#{id}/history?date=#{date}&localization=#{localization}"
+      end
+
       def self.exchanges_url
         "#{API_ENDPOINT}/exchanges"
       end
