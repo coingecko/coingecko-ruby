@@ -73,6 +73,10 @@ module CoingeckoRuby
         "#{API_ENDPOINT}/exchanges/#{id}/tickers?coin_ids=#{coin_ids}&include_exchange_logo=#{include_exchange_logo}&page=#{page}&order=#{order}"
       end
 
+      def self.exchange_status_updates_url(id)
+        "#{API_ENDPOINT}/exchanges/#{id}/status_updates"
+      end
+
       def self.ping_url
         "#{API_ENDPOINT}/ping"
       end

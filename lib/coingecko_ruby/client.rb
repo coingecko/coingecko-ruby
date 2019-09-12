@@ -108,6 +108,10 @@ module CoingeckoRuby
       CoingeckoRuby::Services::Exchanges::Tickers.new.fetch(id, coin_ids, include_exchange_logo, page, order)
     end
 
+    def exchange_status_updates(id)
+      CoingeckoRuby::Services::Exchanges::StatusUpdates.new.fetch(id)
+    end
+
     def status_updates(category = '', project_type = '', per_page = 50, page = 1)
       CoingeckoRuby::Services::StatusUpdate::StatusUpdate.new.fetch(category, project_type, per_page, page)
     end
