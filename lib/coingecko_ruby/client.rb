@@ -112,6 +112,10 @@ module CoingeckoRuby
       CoingeckoRuby::Services::Exchanges::StatusUpdates.new.fetch(id)
     end
 
+    def exchange_volume_chart(id, days)
+      CoingeckoRuby::Services::Exchanges::VolumeChart.new.fetch(id, days)
+    end
+
     def status_updates(category = '', project_type = '', per_page = 50, page = 1)
       CoingeckoRuby::Services::StatusUpdate::StatusUpdate.new.fetch(category, project_type, per_page, page)
     end

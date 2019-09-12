@@ -5,7 +5,8 @@ module CoingeckoRuby
     class Exchange
       attr_accessor :id, :name, :year_established, :country, :description,
                     :url, :image, :has_trading_incentive, :trade_volume_24h_btc,
-                    :trade_volume_24h_btc_normalized, :tickers, :status_updates
+                    :trade_volume_24h_btc_normalized, :tickers, :status_updates,
+                    :volume_chart
     end
   end
 end

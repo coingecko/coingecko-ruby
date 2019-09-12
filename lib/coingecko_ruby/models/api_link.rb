@@ -77,6 +77,10 @@ module CoingeckoRuby
         "#{API_ENDPOINT}/exchanges/#{id}/status_updates"
       end
 
+      def self.exchange_volume_chart_url(id, days)
+        "#{API_ENDPOINT}/exchanges/#{id}/volume_chart?days=#{days}"
+      end
+
       def self.ping_url
         "#{API_ENDPOINT}/ping"
       end

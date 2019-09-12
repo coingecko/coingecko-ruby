@@ -41,6 +41,7 @@ require 'coingecko_ruby/services/exchanges/list'
 require 'coingecko_ruby/services/exchanges/exchange'
 require 'coingecko_ruby/services/exchanges/tickers'
 require 'coingecko_ruby/services/exchanges/status_updates'
+require 'coingecko_ruby/services/exchanges/volume_chart'
 
 require 'coingecko_ruby/services/status_update/status_update'
 
