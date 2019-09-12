@@ -2,8 +2,9 @@
 
 module CoingeckoRuby::Services::Coins
   class Coin < CoingeckoRuby::Services
-    def fetch(id, localization = true, tickers = true, market_data = true,
-              community_data = true, developer_data = true, sparkline = false)
+    def fetch(id, localization, tickers,
+              market_data, community_data, developer_data,
+              sparkline)
       output = super(CoingeckoRuby::Models::ApiLink.coin_url(
         id, localization, tickers,
         market_data, community_data, developer_data,

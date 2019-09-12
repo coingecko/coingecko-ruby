@@ -2,9 +2,9 @@
 
 module CoingeckoRuby::Services::Simple
   class Price < CoingeckoRuby::Services
-    def fetch(ids, vs_currencies, include_market_cap = false,
-              include_24hr_vol = false, include_24hr_change = false,
-              include_last_updated_at = false)
+    def fetch(ids, vs_currencies, include_market_cap,
+              include_24hr_vol, include_24hr_change,
+              include_last_updated_at)
       output = super(CoingeckoRuby::Models::ApiLink.simple_url(ids, vs_currencies, include_market_cap,
                                                                include_24hr_vol, include_24hr_change,
                                                                include_last_updated_at))
