@@ -96,8 +96,16 @@ module CoingeckoRuby
       CoingeckoRuby::Services::Exchanges::Exchanges.new.fetch
     end
 
+    def exchanges_list
+      CoingeckoRuby::Services::Exchanges::List.new.fetch
+    end
+
     def exchange(id)
       CoingeckoRuby::Services::Exchanges::Exchange.new.fetch(id)
+    end
+
+    def exchange_tickers(id, coin_ids = nil, include_exchange_logo = false, page = 1, order = 'trust_score_desc')
+      CoingeckoRuby::Services::Exchanges::Tickers.new.fetch(id, coin_ids, include_exchange_logo, page, order)
     end
 
     def status_updates(category = '', project_type = '', per_page = 50, page = 1)

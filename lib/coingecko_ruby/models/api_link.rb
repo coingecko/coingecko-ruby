@@ -61,8 +61,16 @@ module CoingeckoRuby
         "#{API_ENDPOINT}/exchanges"
       end
 
+      def self.exchanges_list_url
+        "#{API_ENDPOINT}/exchanges/list"
+      end
+
       def self.exchange_url(id)
         "#{API_ENDPOINT}/exchanges/#{id}"
+      end
+
+      def self.exchange_tickers_url(id, coin_ids, include_exchange_logo, page, order)
+        "#{API_ENDPOINT}/exchanges/#{id}/tickers?coin_ids=#{coin_ids}&include_exchange_logo=#{include_exchange_logo}&page=#{page}&order=#{order}"
       end
 
       def self.ping_url
