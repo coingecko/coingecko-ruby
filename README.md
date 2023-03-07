@@ -23,7 +23,8 @@ Or install it yourself as:
 ## Usage
 
 Example to get the current USD price:
-```require 'coingecko_ruby'
+```
+require 'coingecko_ruby'
 client = CoingeckoRuby::Client.new
 @btc_price = client.price('bitcoin')["bitcoin"]["usd"].to_f
 ```
